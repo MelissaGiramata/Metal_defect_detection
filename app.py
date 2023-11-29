@@ -1,10 +1,10 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import tensorflow 
+import tensorflow as tf
 
 # Load pre-trained model
-model = tensorflow.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('model.h5')
 
 # Function to preprocess the image for the model
 def preprocess_image(image):
@@ -34,7 +34,10 @@ def main():
 
         if st.button("Click here to Predict"):
             prediction = predict_metal(image_path)
-            st.write(f"Prediction Result: {prediction}")
+
+            # Display result based on the prediction threshold
+            result = "Defective" if prediction >= 0.5 else "Okay"
+            st.write(f"Prediction Result: {result} (Confidence: {prediction[0][0]:.2f})")
 
 if __name__ == "__main__":
     main()
