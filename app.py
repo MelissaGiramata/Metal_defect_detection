@@ -40,7 +40,7 @@ def main():
             prediction = predict_metal(image_path)
 
             # Display result based on the prediction threshold
-            result = "Defective" if prediction[0][0] >= 0.5 else "Okay"
+            result = "Defective" if prediction[0][0] >= 0.5 else "Normal"
             st.write(f"Prediction Result: {result} (Predicted value: {prediction[0][0]:.2f})")
 
 if __name__ == "__main__":
