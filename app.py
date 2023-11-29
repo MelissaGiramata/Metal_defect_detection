@@ -11,19 +11,19 @@ def preprocess_image(image):
     img = Image.open(image)
     img = img.resize((224, 224))
     img_array = np.array(img) / 255.0
-    
-    # Check if the image has the right shape
-    if img_array.shape == (None, None, None, 3):
-        return img_array
-    else:
-        st.error("Invalid Image Shape. Please upload an image with shape (224, 224, 3).")
-        st.stop()
+    img_array = np.expand_dims(img_array, axis=0)
+    return img_array
 
 # Function to predict metal presence
 def predict_metal(image):
-    img_array = preprocess_image(image)
-    prediction = model.predict(img_array)
-    return prediction
+    try:
+        img_array = preprocess_image(image)
+        prediction = model.predict(img_array)
+        return prediction
+    except Exception as e:
+        st.error(f"An error occurred during prediction: {str(e)}")
+        # Return a default prediction (you can adjust this based on your needs)
+        return np.array([[0.0]])
 
 def main():
     st.title("Metal Detection App")
@@ -41,7 +41,7 @@ def main():
             prediction = predict_metal(image_path)
 
             # Display result based on the prediction threshold
-            result = "Defective" if prediction >= 0.5 else "Okay"
+            result = "Defective" if prediction[0][0] >= 0.5 else "Okay"
             st.write(f"Prediction Result: {result} (Confidence: {prediction[0][0]:.2f})")
 
 if __name__ == "__main__":
