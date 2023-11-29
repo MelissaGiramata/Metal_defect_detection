@@ -1,4 +1,4 @@
-**HOSTED APP: https://metaldefectdetection-mdlj4pkextcnwvd6kcdfhm.streamlit.app/
+**HOSTED APP: https://metaldefectdetection-mdlj4pkextcnwvd6kcdfhm.streamlit.app/**
 
 
 Mechanic Component Images ( Normal / Defected)
