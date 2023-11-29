@@ -22,7 +22,7 @@ def predict_metal(image):
         return prediction
     except Exception as e:
         st.error(f"Invalid Image.Please upload a related image.")
-        return np.array([[0.0]])
+        return np.array([[1.0]])
 
 def main():
     st.title("Metal Detection App")
