@@ -11,8 +11,13 @@ def preprocess_image(image):
     img = Image.open(image)
     img = img.resize((224, 224))
     img_array = np.array(img) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)
-    return img_array
+    
+    # Check if the image has the right shape
+    if img_array.shape == (1, 224, 224, 3):
+        return img_array
+    else:
+        st.error("Invalid Image Shape. Please upload an image with shape (224, 224, 3).")
+        st.stop()
 
 # Function to predict metal presence
 def predict_metal(image):
