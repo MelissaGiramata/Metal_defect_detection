@@ -13,7 +13,7 @@ def preprocess_image(image):
     img_array = np.array(img) / 255.0
     
     # Check if the image has the right shape
-    if img_array.shape == (1, 224, 224, 3):
+    if img_array.shape == (None, None, None, 3):
         return img_array
     else:
         st.error("Invalid Image Shape. Please upload an image with shape (224, 224, 3).")
