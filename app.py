@@ -1,10 +1,10 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import tensorflow as tf
+import tensorflow 
 
 # Load pre-trained model
-model = tf.keras.models.load_model('model.h5')
+model = tensorflow.keras.models.load_model('model.h5')
 
 # Function to preprocess the image for the model
 def preprocess_image(image):
