@@ -7,4 +7,4 @@ We decided to make the inspection process automatic and for this, we need to mak
 link:/kaggle/input/real-life-industrial-dataset-of-casting-product
 
 
-Codes are contained the .py file
+Codes are contained the .ipynb file
