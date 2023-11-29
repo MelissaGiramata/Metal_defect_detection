@@ -42,7 +42,7 @@ def main():
 
             # Display result based on the prediction threshold
             result = "Defective" if prediction[0][0] >= 0.5 else "Okay"
-            st.write(f"Prediction Result: {result} (Confidence: {prediction[0][0]:.2f})")
+            st.write(f"Prediction Result: {result} (Predicted value: {prediction[0][0]:.2f})")
 
 if __name__ == "__main__":
     main()
