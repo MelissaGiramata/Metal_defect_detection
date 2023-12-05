@@ -1,5 +1,5 @@
 **HOSTED APP: https://metaldefectdetection-mdlj4pkextcnwvd6kcdfhm.streamlit.app/**
-
+**demo:https://drive.google.com/file/d/1KmPsQD6B0aitvquo3kaEpIMC1MmM1SaT/view?usp=sharing**
 
 Mechanic Component Images ( Normal / Defected)
 
